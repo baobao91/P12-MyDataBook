@@ -11,10 +11,12 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <ListView
-            android:id="@+id/ListViewItem"
-            android:layout_width="match_parent"
-            android:layout_height="446dp" />
+        <TextView
+            android:id="@+id/bioResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            />
 
         <Button
             android:id="@+id/buttonEdit"
