@@ -72,19 +72,25 @@ public class MainActivity extends AppCompatActivity {
                 if (position == 3) {
                     Intent i = new Intent(MainActivity.this, AboutActivity.class);
                     startActivity(i);
+                } else {
+                    FragmentManager fm = getSupportFragmentManager();
+                    FragmentTransaction trans = fm.beginTransaction();
+                    trans.replace(R.id.content_frame, fragment);
+                    trans.commit();
+
+                    // Highlight the selected item,
+                    //  update the title, and close the drawer
+                    drawerList.setItemChecked(position, true);
+                    dataBook databook = alBook.get(position);
+                    ab.setTitle("" + databook);
+                    drawerLayout.closeDrawer(drawerList);
                 }
 
-                FragmentManager fm = getSupportFragmentManager();
-                FragmentTransaction trans = fm.beginTransaction();
-                trans.replace(R.id.content_frame, fragment);
-                trans.commit();
-                
-                // Highlight the selected item,
-                //  update the title, and close the drawer
-                drawerList.setItemChecked(position, true);
-                dataBook databook = alBook.get(position);
-                ab.setTitle("" + databook);
-                drawerLayout.closeDrawer(drawerList);
+
+
+
+
+
             }
         });
 
