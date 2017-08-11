@@ -67,6 +67,8 @@ public class BioFragment extends Fragment {
                 final EditText etResult = (EditText) editBio
                         .findViewById(R.id.editTextPassPhrase);
 
+                etResult.setText(settings.getString("bioResult", ""));
+
                 final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setTitle("Edit Bio")
                         .setView(editBio)
@@ -79,9 +81,6 @@ public class BioFragment extends Fragment {
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int id) {
-
-
-
                                 editor.putString("bioResult", etResult.getText().toString());
                                 editor.apply();
                                 bioResult.setText(settings.getString("bioResult", ""));
