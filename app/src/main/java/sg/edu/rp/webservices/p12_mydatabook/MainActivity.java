@@ -1,5 +1,6 @@
 package sg.edu.rp.webservices.p12_mydatabook;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -17,7 +18,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-//123
+
     private DrawerLayout drawerLayout;
     private ListView drawerList;
 
@@ -60,20 +61,24 @@ public class MainActivity extends AppCompatActivity {
                     position, long arg3) {
 
                 Fragment fragment = null;
+
                 if (position == 0)
                     fragment = new BioFragment();
                 else if (position == 1)
                     fragment = new VacFragment();
                 else if (position == 2)
                     fragment = new AnniversaryFragment();
-                else if (position == 3)
-                    fragment = new AboutFragment();
+
+                if (position == 3) {
+                    Intent i = new Intent(MainActivity.this, AboutActivity.class);
+                    startActivity(i);
+                }
 
                 FragmentManager fm = getSupportFragmentManager();
                 FragmentTransaction trans = fm.beginTransaction();
                 trans.replace(R.id.content_frame, fragment);
                 trans.commit();
-
+                
                 // Highlight the selected item,
                 //  update the title, and close the drawer
                 drawerList.setItemChecked(position, true);
