@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="sg.edu.rp.webservices.p12_mydatabook.AboutActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Created By: Ah Chong, Peter, Mary"
+        android:textAppearance="@android:style/TextAppearance.Large" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        app:srcCompat="@drawable/Republic_Polytechnic_Logo" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="C347 - Android Programming II Republic Polytechnic"
+        android:textAppearance="@android:style/TextAppearance.Large" />
+</LinearLayout>
